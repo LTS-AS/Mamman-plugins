@@ -77,6 +77,8 @@ if __name__ == '__main__':
     #df = pandas.DataFrame()
     df = pandas.DataFrame()
     df = df.append(read_o_data())
-    #df = df.append(read_user_data())
-    with open('o_data.json', 'w') as afile:
+    df = df.append(read_user_data())
+    
+    with open('data.json', 'w') as afile:
         afile.write(df.to_json(orient='records'))
+    print(df.tail())
